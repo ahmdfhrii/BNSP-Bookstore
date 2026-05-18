@@ -1,6 +1,8 @@
 <x-layout>
     <x-slot name="page_content">
         <div class="container-fluid">
+
+            {{-- Header --}}
             <div class="d-flex justify-content-between align-items-center mb-4">
                 <h4 class="fw-bold m-0" style="color: #2b3046;">Detail Pesanan #{{ $order->invoice_number }}</h4>
                 <a href="{{ route('admin.orders.index') }}" class="btn btn-light border fw-bold px-3">
@@ -8,6 +10,7 @@
                 </a>
             </div>
 
+            {{-- Alert --}}
             @if(session('success'))
                 <div class="alert alert-success alert-dismissible fade show shadow-sm" role="alert">
                     <i class="fas fa-check-circle me-2"></i> {{ session('success') }}
@@ -16,6 +19,8 @@
             @endif
 
             <div class="row">
+
+                {{-- KOLOM KIRI: Daftar Buku --}}
                 <div class="col-lg-8">
                     <div class="card border-0 shadow-sm rounded-4 mb-4">
                         <div class="card-header bg-white py-3 fw-bold text-navy">
@@ -49,8 +54,9 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="col-lg-4">
+
+                    {{-- Card Info Pelanggan --}}
                     <div class="card border-0 shadow-sm rounded-4 mb-4">
                         <div class="card-body p-4">
                             <h6 class="fw-bold border-bottom pb-2 mb-3">Informasi Pelanggan</h6>
@@ -66,7 +72,8 @@
                         </div>
                     </div>
 
-                    <div class="card border-0 shadow-sm rounded-4 bg-light">
+                    {{-- Card Update Status --}}
+                    <div class="card border-0 shadow-sm rounded-4 bg-light mb-3">
                         <div class="card-body p-4">
                             <h6 class="fw-bold mb-3"><i class="fas fa-tasks me-2"></i> Update Status Pesanan</h6>
                             <form action="{{ route('admin.orders.update', $order->id) }}" method="POST">
@@ -84,23 +91,18 @@
                             </form>
                         </div>
                     </div>
-                </div>
-                <div class="mt-4">
-                    <div class="card border-0 shadow-sm rounded-4 border-start border-danger border-4">
-                        <div class="card-body p-4">
-                            <h6 class="fw-bold text-danger mb-2">Zona Berbahaya</h6>
-                            <p class="text-muted small mb-3">Menghapus pesanan ini akan menghapus semua data terkait secara permanen dan tidak dapat dibatalkan.</p>
 
-                            <form action="{{ route('admin.orders.destroy', $order->id) }}" method="POST" onsubmit="return confirm('Apakah Anda yakin ingin menghapus pesanan ini selamanya?')">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-outline-danger w-100 fw-bold rounded-3">
-                                    <i class="fas fa-trash-alt me-2"></i> Hapus Pesanan Ini
-                                </button>
-                            </form>
-                        </div>
-                    </div>
+                    {{-- Tombol Hapus Berdiri Sendiri --}}
+                    <form action="{{ route('admin.orders.destroy', $order->id) }}" method="POST" onsubmit="return confirm('Apakah Anda yakin ingin menghapus pesanan ini selamanya?')">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger w-100 fw-bold rounded-3 py-2 shadow-sm">
+                            <i class="fas fa-trash-alt me-2"></i> Hapus Pesanan
+                        </button>
+                    </form>
+
                 </div>
+
             </div>
         </div>
     </x-slot>

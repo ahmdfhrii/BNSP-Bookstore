@@ -55,6 +55,12 @@
                             Tentang Kami
                         </a>
                     </li>
+                    <li>
+                        <a href="#">
+                            <i class="bi bi-chevron-right"></i>
+                            Kontak
+                        </a>
+                    </li>
 
                 </ul>
 
@@ -88,7 +94,7 @@
                         <i class="bi bi-envelope-fill"></i>
 
                         <span>
-                            support@fahribooks.com
+                            ahmdfhri@gmail.com
                         </span>
                     </div>
 
@@ -142,9 +148,6 @@
                     © 2026 FahriBooks. All Rights Reserved.
                 </small>
 
-                <small>
-                    Dibuat dengan ❤️ oleh FahriBooks
-                </small>
 
             </div>
 

@@ -26,6 +26,10 @@
                 <li class="nav-item">
                     <a class="nav-link {{ request()->is('pesanan*') ? 'active-nav' : '' }}" href="/pesanan">Pesanan</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->is('kontak') ? 'active-nav' : '' }}"
+                    href="{{ route('contact') }}">Kontak</a>
+                </li>
             </ul>
 
           <div class="d-flex justify-content-center align-items-center gap-3 mt-3 mt-lg-0">

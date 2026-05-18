@@ -8,10 +8,14 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\BookController as AdminBookController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ProfileController;
+
 Route::get('/', function () {
     return view('home');
 })->name('home');
 
+Route::get('/kontak', [App\Http\Controllers\ContactController::class, 'index'])->name('contact');
 Route::controller(KatalogController::class)->group(function () {
     Route::get('/katalog', 'index')->name('katalog');
     Route::get('/katalog/{slug}', 'show')->name('books.detail');
@@ -25,16 +29,21 @@ Route::middleware(['auth'])->group(function () {
         Route::delete('/keranjang/{id}', 'destroy')->name('cart.destroy');
         Route::post('/checkout', 'checkout')->name('checkout');
     });
+    // fitur halaman pesanan
     Route::controller(OrderController::class)->group(function () {
         Route::get('/pesanan', 'index')->name('orders.index');
         Route::get('/pesanan/riwayat', 'history')->name('orders.history');
     });
-    Route::controller(\App\Http\Controllers\ProfileController::class)->group(function () {
+
+    //halaman profile
+    Route::controller(ProfileController::class)->group(function () {
         Route::get('/profil', 'index')->name('profile.index');
         Route::put('/profil', 'update')->name('profile.update');
     });
 
 });
+
+// autentikasi admin
 Route::middleware(['auth', 'admin'])
     ->prefix('admin')
     ->name('admin.')

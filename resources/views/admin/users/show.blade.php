@@ -190,13 +190,13 @@
                     {{-- Button Action --}}
                     <div class="d-flex gap-3 mt-5 flex-wrap">
 
-                        <a href="#"
+                        <a href="{{ route('admin.users.edit', $user->id) }}"
                            class="btn btn-warning px-4 py-2 fw-semibold text-dark shadow-sm">
                             <i class="fas fa-edit me-2"></i>
                             Edit Pengguna
                         </a>
 
-                        <form action="#" method="POST">
+                        <form action="{{ route('admin.users.destroy', $user->id) }}" method="POST">
                             @csrf
                             @method('DELETE')
 

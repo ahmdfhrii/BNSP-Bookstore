@@ -98,11 +98,11 @@ class CartController extends Controller
 
         // 3. Rakit Teks Pembuka WhatsApp
         $text = "Halo Admin *FahriBooks*, saya ingin melakukan pemesanan.\n\n";
-        $text .= "🧾 *No. Invoice:* " . $invoice . "\n";
-        $text .= "👤 *Nama Pemesan:* " . $user->name . "\n";
-        $text .= "📞 *No. HP:* " . ($user->phone ?? 'Belum diisi') . "\n";
-        $text .= "📍 *Alamat:* " . ($user->address ?? 'Belum diisi') . "\n\n";
-        $text .= "🛒 *Detail Pesanan:*\n";
+        $text .= "*No. Invoice:* " . $invoice . "\n";
+        $text .= "*Nama Pemesan:* " . $user->name . "\n";
+        $text .= "*No. HP:* " . ($user->phone ?? 'Belum diisi') . "\n";
+        $text .= "Alamat:* " . ($user->address ?? 'Belum diisi') . "\n\n";
+        $text .= "*Detail Pesanan:*\n";
 
         // 4. Proses Item Buku (Masuk ke Teks & Database order_items)
         foreach ($carts as $cart) {
@@ -127,9 +127,9 @@ class CartController extends Controller
         \App\Models\Cart::destroy($carts->pluck('id'));
 
         // 7. Tambahkan Total Keseluruhan ke Teks WhatsApp
-        $text .= "\n====================\n";
-        $text .= "💰 *TOTAL PEMBAYARAN: Rp " . number_format($totalPrice, 0, ',', '.') . "*\n";
-        $text .= "====================\n\n";
+        $text .= "\n===========================\n";
+        $text .= "*TOTAL PEMBAYARAN: Rp " . number_format($totalPrice, 0, ',', '.') . "*\n";
+        $text .= "=============================\n\n";
         $text .= "Mohon informasi rekening untuk pembayarannya. Terima kasih!";
 
         // 8. Redirect ke WhatsApp
