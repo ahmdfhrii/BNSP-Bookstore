@@ -72,6 +72,16 @@
             color: var(--navy-bg);
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
+        .arrow-icon {
+            transition: transform 0.3s ease;
+        }
+        .nav-link .arrow-icon {
+            transform: rotate(0deg);
+        }
+
+        .nav-link[aria-expanded="true"] .arrow-icon {
+            transform: rotate(90deg);
+        }
 
         /* KONTEN UTAMA */
         .main-content {
@@ -178,9 +188,18 @@
                 </li>
 
                 <li class="nav-item mt-2">
-                    <a class="nav-link text-white justify-content-between cursor-pointer" data-bs-toggle="collapse" href="#dataTablesMenu">
-                        <div><i class="fas fa-list fs-5 me-3"></i> Data Tables</div>
-                        <i class="fas fa-chevron-down fs-6"></i>
+                    <a class="nav-link text-white justify-content-between cursor-pointer"
+                    data-bs-toggle="collapse"
+                    href="#dataTablesMenu"
+                    role="button"
+                    aria-expanded="true">
+
+                        <div>
+                            <i class="fas fa-list fs-5 me-3"></i>
+                            Data Tables
+                        </div>
+
+                        <i class="fas fa-chevron-right fs-6 arrow-icon"></i>
                     </a>
                     <div class="collapse show" id="dataTablesMenu">
                         <ul class="nav flex-column ms-3 mt-1">

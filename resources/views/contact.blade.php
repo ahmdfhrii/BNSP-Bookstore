@@ -32,15 +32,12 @@
             <div class="card shadow-sm rounded-4 h-100 contact-card bg-white">
                 <div class="card-body p-4 p-md-5 d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-4">
 
-                    {{-- Teks di Kiri --}}
                     <div>
                         <h4 class="fw-bold text-dark mb-2">Live Chat</h4>
                         <p class="text-muted mb-0" style="font-size: 0.95rem;">
                             Melayani pada pukul 08:00 - 17.00 WIB
                         </p>
                     </div>
-
-                    {{-- Tombol di Kanan --}}
                     <div>
                         <a href="https://wa.me/62895412946795"
                            target="_blank"
@@ -54,12 +51,10 @@
             </div>
         </div>
 
-        {{-- KOTAK KANAN: Email --}}
+        {{-- Email --}}
         <div class="col-lg-6">
             <div class="card shadow-sm rounded-4 h-100 contact-card bg-white">
                 <div class="card-body p-4 p-md-5 d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-4">
-
-                    {{-- Teks di Kiri --}}
                     <div>
                         <h4 class="fw-bold text-dark mb-2">Email</h4>
                         <p class="text-muted mb-1" style="font-size: 0.95rem;">
@@ -69,8 +64,6 @@
                             Melayani pada pukul 08:00 - 17.00 WIB
                         </p>
                     </div>
-
-                    {{-- Tombol di Kanan --}}
                     <div>
                         <a href="mailto:ahmdfhri09@gmail.com"
                            class="btn btn-primary px-4 py-2 fw-bold rounded-3 text-nowrap"

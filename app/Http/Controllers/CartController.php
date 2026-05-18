@@ -92,7 +92,7 @@ class CartController extends Controller
         $order = \App\Models\Order::create([
             'user_id' => $user->id,
             'invoice_number' => $invoice,
-            'total_price' => 0, // Akan di-update di bawah
+            'total_price' => 0, 
             'status' => 'pending',
         ]);
 

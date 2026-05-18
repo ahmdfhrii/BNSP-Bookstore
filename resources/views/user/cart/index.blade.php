@@ -171,13 +171,12 @@
         // Validasi Batas Atas (Maksimal sesuai stok database)
         if (newQty > maxStock) {
             alert(`Maaf, Anda tidak bisa menambahkan lebih dari ${maxStock} buku (Stok habis).`);
-            return; // Hentikan proses jika melebihi stok
+            return;
         }
 
         // Ubah tampilan angka langsung
         input.value = newQty;
 
-        // Update atribut data-qty pada checkbox agar hitungan total akurat
         const checkbox = document.querySelector(`.item-checkbox[value="${cartId}"]`);
         if (checkbox) checkbox.setAttribute('data-qty', newQty);
 
@@ -195,7 +194,7 @@
             body: JSON.stringify({ quantity: newQty })
         }).catch(error => {
             console.error('Terjadi kesalahan:', error);
-            input.value = newQty - change; // Rollback angka jika server error
+            input.value = newQty - change;
             calculateTotal();
         });
     }

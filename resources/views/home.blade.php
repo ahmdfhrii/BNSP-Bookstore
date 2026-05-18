@@ -62,7 +62,7 @@
                 <p class="fs-5 mb-5 text-white opacity-75" style="max-width: 650px; line-height: 1.9;">
                     FahriBooks membantu kamu menemukan buku terbaik kapan saja dan di mana saja.
                 </p>
-                <a href="#" class="btn btn-yellow px-5 py-3 rounded-pill fw-semibold shadow-lg">
+                <a href="/katalog" class="btn btn-yellow px-5 py-3 rounded-pill fw-semibold shadow-lg">
                     Mulai Membaca <i class="bi bi-arrow-right ms-2"></i>
                 </a>
             </div>
@@ -151,7 +151,7 @@
 
         </p>
 
-        <a href="#"
+        <a href="/katalog"
            class="btn btn-yellow px-4 py-3 rounded-pill fw-semibold shadow-sm">
 
             Belanja Sekarang
@@ -351,7 +351,7 @@
         <p class="text-white-50 fw-medium mb-2">Mulai Sekarang</p>
         <h1 class="fw-bold mb-3 display-5">Mulai Petualangan Membacamu</h1>
         <p class="mb-5 text-white-50 fs-5">Temukan ribuan buku menarik hanya di FahriBooks</p>
-        <a href="#" class="btn btn-yellow px-5 py-3 rounded-pill fw-semibold fs-5 shadow-lg">
+        <a href="/katalog" class="btn btn-yellow px-5 py-3 rounded-pill fw-semibold fs-5 shadow-lg">
             <i class="bi bi-search me-2"></i> Cari Buku
         </a>
     </div>

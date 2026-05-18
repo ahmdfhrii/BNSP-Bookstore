@@ -17,9 +17,6 @@
         --yellow: #facc15;
     }
 
-    /* =====================================
-       HERO
-    ===================================== */
     .hero-katalog{
         background: linear-gradient(135deg, #1f2940, #2f3c63);
         border-radius: 30px;
@@ -62,10 +59,6 @@
         margin: auto;
         line-height: 1.8;
     }
-
-    /* =====================================
-       FILTER
-    ===================================== */
     .filter-card{
         background: white;
         border-radius: 24px;
@@ -104,10 +97,6 @@
     .btn-search:hover{
         background: #111827;
     }
-
-    /* =====================================
-       BOOK CARD
-    ===================================== */
     .book-card{
         border: none;
         border-radius: 24px;
@@ -175,20 +164,12 @@
         background: #111827;
         color: var(--yellow);
     }
-
-    /* =====================================
-       EMPTY
-    ===================================== */
     .empty-state{
         background: white;
         border-radius: 30px;
         padding: 80px 20px;
         box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     }
-
-    /* =====================================
-       PAGINATION
-    ===================================== */
     .pagination{
         gap: 10px;
     }

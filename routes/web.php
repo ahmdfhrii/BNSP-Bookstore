@@ -8,9 +8,9 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\BookController as AdminBookController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\CategoryController;
-use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProfileController;
 
+// user belum terautentikasi
 Route::get('/', function () {
     return view('home');
 })->name('home');
@@ -20,6 +20,8 @@ Route::controller(KatalogController::class)->group(function () {
     Route::get('/katalog', 'index')->name('katalog');
     Route::get('/katalog/{slug}', 'show')->name('books.detail');
 });
+
+// autentikasi user
 Route::middleware(['auth'])->group(function () {
     // Fitur Keranjang & Checkout
     Route::controller(CartController::class)->group(function () {
